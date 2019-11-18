@@ -19,9 +19,9 @@ const SpaceShip = () => {
 
   useEffect(() => {
     new GLTFLoader().load("/scene.gltf", setModel)
-  })
+  },[])
 
-  return model ? <primitive object={model.scene} /> : null
+  return model ? <primitive object={model.scene} scale={[0.3,0.3,0.3]} /> : null
 }
 
 const Controls = () => {
@@ -102,6 +102,7 @@ export default () => {
           <SpaceShip position={[20,15,20]} />
         </Canvas>
       )}
+      
     </>
   )
 }
